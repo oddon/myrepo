@@ -10,10 +10,19 @@ public class Celsius extends Temperature {
             super(t);
         }
 
+    @java.lang.Override
+    public Temperature toCelsius() {
+        return new Celsius(super.value);
+    }
 
-        public String toString()
+    @java.lang.Override
+    public Temperature toFahrenheit() {
+        return new Fahrenheit(super.value * 9 / 5 + 32);
+    }
+
+    public String toString()
         {
             // TODO: Complete this method
-            return "";
+            return "" + super.value + " C";
         }
 }
